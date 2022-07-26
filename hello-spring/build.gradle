@@ -1,0 +1,23 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11' //JAVA 11 version
+
+repositories {
+	mavenCentral() //mavenCentral이라는 공개된 사이트에서 라이브러리들을 간편하게 다운로드 받으라는 설정 //필요시 특정 사이트 url 추가 가능
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //thyeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-web'	//spring web
+	testImplementation 'org.springframework.boot:spring-boot-starter-test' //Jnuit5
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
