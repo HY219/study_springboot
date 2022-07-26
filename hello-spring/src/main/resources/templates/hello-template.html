@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- 템플릿 엔진으로서 동작을 하면, `text=""`의 내용이 `hello! empty`로 치환이 된다.
+서버 없이 html 마크업을 하거나 할 때 적어놓고 볼 수 o -->
+<!-- ${name} => 모델에서 값을 꺼내는 것 -->
+<p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
+</html>
