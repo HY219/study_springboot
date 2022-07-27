@@ -31,6 +31,7 @@ public class HelloController {
         return "hello " + name; //"hello spring"
     }
 
+//API 방식
     @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name) { // value = spring!!!!!
