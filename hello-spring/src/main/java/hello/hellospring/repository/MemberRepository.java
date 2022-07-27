@@ -1,3 +1,4 @@
+/* 사용할 기능 */
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;

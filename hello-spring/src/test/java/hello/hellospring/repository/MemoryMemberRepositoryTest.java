@@ -1,6 +1,8 @@
+/* Test */
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,6 +13,12 @@ import static org.assertj.core.api.Assertions.*;
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
+
+    //각 메서드들의 실행이 끝날 때마다 호출됨. 실행할 동작 지정 (콜백 메서드)
+    @AfterEach
+    public void afterEach(){
+        repository.clearStore(); //Test가 한번 실행되고 끝날 때마다, 저장소 지움.
+    }
 
     //save 메서드가 실행이 됨
     @Test

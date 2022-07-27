@@ -1,9 +1,11 @@
+/* 실제 기능이 동작하도록 */
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
 
 import java.util.*;
 
+////
 public class MemoryMemberRepository implements MemberRepository{
 
     //메모리 저장
@@ -43,5 +45,10 @@ public class MemoryMemberRepository implements MemberRepository{
         //Member들이 반환된다.
         return new ArrayList<>(store.values()); //store에 있는 values() = Member
         //return null;
+    }
+
+    //store 비우기
+    public void clearStore() {
+        store.clear();
     }
 }

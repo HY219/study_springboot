@@ -1,3 +1,4 @@
+/* 데이터 */
 package hello.hellospring.domain;
 
 //Member 클래스 생성
