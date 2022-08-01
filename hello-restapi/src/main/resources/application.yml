@@ -10,5 +10,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     properties:
+      # create -> 애플리케이션이 켜질 때, DB도 지우고 새로 만든다는 의미
+      # none -> DB에 값이 유지
       hibernate.hbm2ddl.auto: create
     show-sql: true
