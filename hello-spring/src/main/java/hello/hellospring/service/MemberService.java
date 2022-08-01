@@ -33,13 +33,17 @@ public class MemberService {
         //같은 이름이 있는 중복 회원x
         //memberRepository.findByName(member.getName()); //memberRepository에서 findByName으로 찾아온 member.getName()
         //ctrl + Alt + v => return을 바로 반환해준다.
+        validateDuplicateMember(member);
+
+        memberRepository.save(member); //memberRepository의 save를 호출
+        return member.getId();
+    }
+
+    private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 //값이 있으면 throw new를 반환
                 .ifPresent(m-> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
             });
-
-        memberRepository.save(member); //memberRepository의 save를 호출
-        return member.getId();
     }
 }
